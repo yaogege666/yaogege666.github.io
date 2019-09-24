@@ -79,13 +79,13 @@
 
 
 
-<meta name="description" content="Welcome to my blog，This time I want to introduce a question about BFC。 定义 BFC 就是块级格式上下文，是页面盒模型布局中的一种 CSS 渲染模式，相当于一个独立的容器，里面的元素和外部的元素相互不影响。只要元素满足下面任一条件即可触发 BFC 特性：">
+<meta name="description" content="Welcome to my blog，This time I want to introduce a question about BFC。 定义 BFC 就是块级格式上下文，是页面盒模型布局中的一种 CSS 渲染模式，相当于一个独立的容器，里面的元素和外部的元素相互不影响。只要元素满足下面任一条件即可触发 BFC 特性： 123451.body 根元素2.浮动元素：float 除 none 以外">
 <meta name="keywords" content="interview,css">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BFC及其应用">
 <meta property="og:url" content="http://yoursite.com/2019/09/24/BFC及其应用/index.html">
 <meta property="og:site_name" content="一只可爱的小叮当">
-<meta property="og:description" content="Welcome to my blog，This time I want to introduce a question about BFC。 定义 BFC 就是块级格式上下文，是页面盒模型布局中的一种 CSS 渲染模式，相当于一个独立的容器，里面的元素和外部的元素相互不影响。只要元素满足下面任一条件即可触发 BFC 特性：">
+<meta property="og:description" content="Welcome to my blog，This time I want to introduce a question about BFC。 定义 BFC 就是块级格式上下文，是页面盒模型布局中的一种 CSS 渲染模式，相当于一个独立的容器，里面的元素和外部的元素相互不影响。只要元素满足下面任一条件即可触发 BFC 特性： 123451.body 根元素2.浮动元素：float 除 none 以外">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/09/24/BFC及其应用/bf1.png">
 <meta property="og:image" content="http://yoursite.com/2019/09/24/BFC及其应用/bf2.png">
@@ -93,10 +93,10 @@
 <meta property="og:image" content="http://yoursite.com/2019/09/24/BFC及其应用/bf4.png">
 <meta property="og:image" content="http://yoursite.com/2019/09/24/BFC及其应用/bf5.png">
 <meta property="og:image" content="http://yoursite.com/2019/09/24/BFC及其应用/bf6.png">
-<meta property="og:updated_time" content="2019-09-24T12:22:25.187Z">
+<meta property="og:updated_time" content="2019-09-24T12:24:47.541Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BFC及其应用">
-<meta name="twitter:description" content="Welcome to my blog，This time I want to introduce a question about BFC。 定义 BFC 就是块级格式上下文，是页面盒模型布局中的一种 CSS 渲染模式，相当于一个独立的容器，里面的元素和外部的元素相互不影响。只要元素满足下面任一条件即可触发 BFC 特性：">
+<meta name="twitter:description" content="Welcome to my blog，This time I want to introduce a question about BFC。 定义 BFC 就是块级格式上下文，是页面盒模型布局中的一种 CSS 渲染模式，相当于一个独立的容器，里面的元素和外部的元素相互不影响。只要元素满足下面任一条件即可触发 BFC 特性： 123451.body 根元素2.浮动元素：float 除 none 以外">
 <meta name="twitter:image" content="http://yoursite.com/2019/09/24/BFC及其应用/bf1.png">
 
 
@@ -403,9 +403,10 @@
         <p>Welcome to my blog，This time I want to introduce a question about BFC。</p>
 <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><hr>
 <p>BFC 就是块级格式上下文，是页面盒模型布局中的一种 CSS 渲染模式，相当于一个独立的容器，里面的元素和外部的元素相互不影响。<br>只要元素满足下面任一条件即可触发 BFC 特性：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.body 根元素</span><br><span class="line">2.浮动元素：<span class="built_in">float</span> 除 none 以外的值</span><br><span class="line">3.绝对定位元素：position (absolute、fixed)</span><br><span class="line">4.display 为 inline-block、table-cells、flex</span><br><span class="line">5.overflow 除了 visible 以外的值 (hidden、auto、scroll)</span><br></pre></td></tr></table></figure>
+
 <a id="more"></a>
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.body 根元素</span><br><span class="line">2.浮动元素：<span class="built_in">float</span> 除 none 以外的值</span><br><span class="line">3.绝对定位元素：position (absolute、fixed)</span><br><span class="line">4.display 为 inline-block、table-cells、flex</span><br><span class="line">5.overflow 除了 visible 以外的值 (hidden、auto、scroll)</span><br></pre></td></tr></table></figure>
 
 <h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><h3 id="1-同一个-BFC-下外边距会发生折叠"><a href="#1-同一个-BFC-下外边距会发生折叠" class="headerlink" title="1. 同一个 BFC 下外边距会发生折叠"></a>1. 同一个 BFC 下外边距会发生折叠</h3><p>下面两个div元素处于同一个BFC容器下，两个div的外边距发生了重叠，两个div之间的距离只有00px。如图所示：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">div&#123;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background: ;</span><br><span class="line">    margin: 100px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
