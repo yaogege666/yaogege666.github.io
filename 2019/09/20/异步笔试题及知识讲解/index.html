@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="queue,async,interview,">
+  <meta name="keywords" content="interview,queue,async,">
 
 
 
@@ -80,14 +80,14 @@
 
 
 <meta name="description" content="Welcome to my blog，Today I’d like to share with you an  front interview question. 前端面试高频题目之事件任务队列注：本篇文章运行环境为当前最新版本的谷歌浏览器：77.0.3865.90  12345678910111213141516171819202122232425//请写出输出内容async function">
-<meta name="keywords" content="queue,async,interview">
+<meta name="keywords" content="interview,queue,async">
 <meta property="og:type" content="article">
 <meta property="og:title" content="异步笔试题及知识讲解">
 <meta property="og:url" content="http://yoursite.com/2019/09/20/异步笔试题及知识讲解/index.html">
 <meta property="og:site_name" content="一只可爱的小叮当">
 <meta property="og:description" content="Welcome to my blog，Today I’d like to share with you an  front interview question. 前端面试高频题目之事件任务队列注：本篇文章运行环境为当前最新版本的谷歌浏览器：77.0.3865.90  12345678910111213141516171819202122232425//请写出输出内容async function">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-24T03:26:55.009Z">
+<meta property="og:updated_time" content="2019-09-24T03:43:07.625Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="异步笔试题及知识讲解">
 <meta name="twitter:description" content="Welcome to my blog，Today I’d like to share with you an  front interview question. 前端面试高频题目之事件任务队列注：本篇文章运行环境为当前最新版本的谷歌浏览器：77.0.3865.90  12345678910111213141516171819202122232425//请写出输出内容async function">
@@ -413,7 +413,7 @@
 <p>大家可以尝试着先把结果写出来，然后对比一下下面的结果。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">script start</span><br><span class="line">async1 start</span><br><span class="line">async2</span><br><span class="line">promise1</span><br><span class="line">script end</span><br><span class="line">async1 end</span><br><span class="line">promise2</span><br><span class="line">setTimeout</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
 
-<p>这道题主要考察的是事件循环中函数执行顺序的问题，其中包括<strong>async，await</strong>，<strong>setTimeout</strong>，<strong>Promise</strong>函数。接下来会着重讲一下这道题的的解析和知识点。</p>
+<p>这道题主要考察的是事件循环中函数执行顺序的问题，其中包括<strong>async，await</strong>，<strong>setTimeout</strong>，<strong>Promise</strong>函数。接下来会着重讲一下这道题涉及的知识点。</p>
 <h3 id="任务队列"><a href="#任务队列" class="headerlink" title="任务队列"></a>任务队列</h3><p> JS分为同步任务和异步任务，异步任务分为<strong>宏任务</strong>和<strong>微任务</strong>。<br> 同步任务都在主线程上执行，形成一个执行栈，会立即执行，一旦执行栈中的所有同步任务执行完毕（此时JS引擎空闲），系统就会读取任务队列，将可运行的异步任务添加到可执行栈中，开始执行。</p>
 <h3 id="宏任务"><a href="#宏任务" class="headerlink" title="宏任务"></a>宏任务</h3><p>macro)task（又称之为宏任务），可以理解是每次执行栈执行的代码就是一个宏任务（包括每次从事件队列中获取一个事件回调并放到执行栈中执行）。</p>
 <p>浏览器为了能够使得JS内部(macro)task与DOM任务能够有序的执行，会在一个(macro)task执行结束后，在下一个(macro)task 执行开始前，对页面进行重新渲染，流程如下：</p>
@@ -423,7 +423,7 @@
 <h3 id="微任务"><a href="#微任务" class="headerlink" title="微任务"></a>微任务</h3><p>microtask（又称为微任务），可以理解是在当前 task 执行结束后立即执行的任务。也就是说，在当前task任务后，下一个task之前，在渲染之前。</p>
 <p>所以它的响应速度相比setTimeout（setTimeout是task）会更快，因为无需等渲染。也就是说，在某一个macrotask执行完后，就会将在它执行期间产生的所有microtask都执行完毕（在渲染前）。</p>
 <p>microtask主要包含：Promise.then、MutaionObserver、process.nextTick(Node.js 环境)</p>
-<h3 id="运行机制"><a href="#运行机制" class="headerlink" title="运行机制"></a>运行机制</h3><blockquote><p>1.执行一个宏任务（栈中没有就从事件队列中获取）<br>2.执行过程中如果遇到微任务，就将它添加到微任务的任务队列中<br>3.一个宏任务执行完毕后，立即执行当前微任务队列中的<strong>所有微任务</strong>（依次执行<br>4.当前宏任务执行完毕，开始检查渲染，然后GUI线程接管渲染<br>5.渲染完毕后，JS线程继续接管，开始下一个宏任务（从事件队列中获取，<strong>宏任务是一个一个执行</strong></p>
+<h3 id="运行机制"><a href="#运行机制" class="headerlink" title="运行机制"></a>运行机制</h3><blockquote><p>1.执行一个宏任务（栈中没有就从事件队列中获取）<br>2.执行过程中如果遇到微任务，就将它添加到微任务的任务队列中<br>3.一个宏任务执行完毕后，立即<strong>依次</strong>执行当前微任务队列中的<strong>所有微任务</strong><br>4.当前宏任务执行完毕，开始检查渲染，然后GUI线程接管渲染<br>5.渲染完毕后，JS线程继续接管，开始下一个宏任务（从事件队列中获取，<strong>宏任务是一个一个执行</strong></p>
 </blockquote>
 
 <h3 id="Promise和async-await"><a href="#Promise和async-await" class="headerlink" title="Promise和async await"></a>Promise和async await</h3><p>大家知道Promise中的异步体现在then和catch中，所以写在Promise中的代码是被当做同步任务立即执行的。而在async/await中，在出现await出现之前，其中的代码也是立即执行的。那么出现了await时候发生了什么呢？<br>await是一个退让线程的标志。await后面的语句会先执行一遍，将await后面的代码加入到microtask中，然后就会跳出整个async函数来执行后面的代码。</p>
@@ -457,11 +457,11 @@
       
         <div class="post-tags">
           
+            <a href="/tags/interview/" rel="tag"># interview</a>
+          
             <a href="/tags/queue/" rel="tag"># queue</a>
           
             <a href="/tags/async/" rel="tag"># async</a>
-          
-            <a href="/tags/interview/" rel="tag"># interview</a>
           
         </div>
       
@@ -483,6 +483,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/24/BFC及其应用/" rel="prev" title="BFC及其应用">
+                BFC及其应用 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -561,7 +565,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -572,7 +576,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -583,7 +587,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
