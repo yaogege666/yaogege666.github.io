@@ -95,7 +95,7 @@ $(document).ready(function () {
     })
   ].forEach(search.addWidget, search);
 
-  search.start();
+  search.aligncontent();
 
   $('.popup-trigger').on('click', function(e) {
     e.stopPropagation();
