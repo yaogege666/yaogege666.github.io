@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="一只专注于前端的娃儿">
+<meta name="description" content="数组遍历的方法for语句1234var arr = [1,2,4,6]for(var i = 0, len = arr.length; i &amp;lt; len; i++)&amp;#123;    console.log(arr[i])&amp;#125;  这是标准的for循环的写法，字符串也支持，定义一个变量 i 作为索引，以跟踪访问的位置，len是数组的长度，i 不能超过len forEach语句forEac">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js数组遍历方法对比">
 <meta property="og:url" content="http://yoursite.com/2019/12/10/js数组遍历方法对比/index.html">
 <meta property="og:site_name" content="一只可爱的小叮当">
-<meta property="og:description" content="一只专注于前端的娃儿">
+<meta property="og:description" content="数组遍历的方法for语句1234var arr = [1,2,4,6]for(var i = 0, len = arr.length; i &amp;lt; len; i++)&amp;#123;    console.log(arr[i])&amp;#125;  这是标准的for循环的写法，字符串也支持，定义一个变量 i 作为索引，以跟踪访问的位置，len是数组的长度，i 不能超过len forEach语句forEac">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-10T03:20:53.987Z">
+<meta property="og:updated_time" content="2019-12-12T11:59:19.058Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js数组遍历方法对比">
-<meta name="twitter:description" content="一只专注于前端的娃儿">
+<meta name="twitter:description" content="数组遍历的方法for语句1234var arr = [1,2,4,6]for(var i = 0, len = arr.length; i &amp;lt; len; i++)&amp;#123;    console.log(arr[i])&amp;#125;  这是标准的for循环的写法，字符串也支持，定义一个变量 i 作为索引，以跟踪访问的位置，len是数组的长度，i 不能超过len forEach语句forEac">
 
 
 
@@ -359,7 +359,35 @@
       
 
       
-        
+        <h3 id="数组遍历的方法"><a href="#数组遍历的方法" class="headerlink" title="数组遍历的方法"></a>数组遍历的方法</h3><h5 id="for语句"><a href="#for语句" class="headerlink" title="for语句"></a>for语句</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>]</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, len = arr.length; i &lt; len; i++)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(arr[i])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这是标准的for循环的写法，字符串也支持，定义一个变量 i 作为索引，以跟踪访问的位置，len是数组的长度，i 不能超过len</p>
+<h5 id="forEach语句"><a href="#forEach语句" class="headerlink" title="forEach语句"></a>forEach语句</h5><p>forEach函数对数组的每个元素执行一次提供的callback函数，遍历一个数组，让数组每个元素做一些事情，，forEach是一个数组方法，可以用来把一个函数套用在一个数组的每个元素上，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">arr.forEach(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(item * <span class="number">2</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h5 id="for-in语句"><a href="#for-in语句" class="headerlink" title="for-in语句"></a>for-in语句</h5><p>for-in一般会用来遍历对象，不过只有可枚举的属性才可以被读取到，包括非整数类型的名称和继承的那些原型链上面的属性，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    name: <span class="string">'test'</span>,</span><br><span class="line">    color: <span class="string">'red'</span>,</span><br><span class="line">    day: <span class="string">'sunday'</span>,</span><br><span class="line">    number: <span class="number">5</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> obj) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(obj[key])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="for-of语句"><a href="#for-of语句" class="headerlink" title="for-of语句"></a>for-of语句</h5><p>for-of语句在可迭代对象上创建一个迭代循环，调用自定义迭代钩子，并为每个不同属性的值执行语句，只要是一个iterable的对象,就可以通过for-of来迭代.，<br>可迭代对象（ Array，Map，Set，String，TypedArray，arguments 对象等），</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [&#123;<span class="attr">name</span>:<span class="string">'bb'</span>&#125;,<span class="number">5</span>,<span class="string">'test'</span>]</span><br><span class="line"><span class="keyword">for</span> (item <span class="keyword">of</span> arr) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(item)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="for-of和for-in区别"><a href="#for-of和for-in区别" class="headerlink" title="for-of和for-in区别"></a>for-of和for-in区别</h5><p>for-in需要把继承链的对象属性都遍历一次，花费时间更久，<br>for-of语句只遍历可迭代的对象的数据，</p>
+<h3 id="es6最新的循环方法，"><a href="#es6最新的循环方法，" class="headerlink" title="es6最新的循环方法，"></a>es6最新的循环方法，</h3><h5 id="map方法–不改变原数组"><a href="#map方法–不改变原数组" class="headerlink" title="map方法–不改变原数组"></a>map方法–不改变原数组</h5><p>调用Array的map()方法，传入我们自己的函数，就得到了一个新的Array作为结果()<br>map方法会给原数组中的每个元素按顺序调用一次callback函数，callback每次执行后的返回值（包括undefined）组合起来形成一个新数组。<br>这样的好处就是我们可以拿到自己需要的数据组合成新的数组，而对原数组没有任何修改。<br>callback函数只会在有值的索引上被调用，那些从来没有被赋值过，或者使用delete删除的索引则不会被调用，让数组通过某种计算产生一个新数组。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">var</span> maparr = arr.map(<span class="function"><span class="params">current</span> =&gt;</span> current*<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<h5 id="reduce方法"><a href="#reduce方法" class="headerlink" title="reduce方法"></a>reduce方法</h5><p>让数组中的前项和后项做某种计算，并累计最终值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>  arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">var</span> total = arr.reduce(<span class="function">(<span class="params">count,arr</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> count + arr.money;</span><br><span class="line">&#125;,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<h5 id="filter方法–不改变原数组（过滤需要的数据）"><a href="#filter方法–不改变原数组（过滤需要的数据）" class="headerlink" title="filter方法–不改变原数组（过滤需要的数据）"></a>filter方法–不改变原数组（过滤需要的数据）</h5><p>filter为数组中的每个元素调用一次callback函数，并把所有callback返回true或等价与true的值的元素创建一个新数组，<br>就是把全部符合条件的元素过滤出来，组合成一个新数组。<br>callback 只会在已经赋值的索引上被调用，对于那些已经被删除或者从未被赋值的索引不会被调用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"><span class="keyword">var</span> filterArr = arr.filter(<span class="function">(<span class="params">num</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> num &gt; <span class="number">3</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h5 id="every方法"><a href="#every方法" class="headerlink" title="every方法"></a>every方法</h5><p>every为数组中的每个元素执行一次callback函数，直到他找到一个callback返回false（表示可转换为布尔值false）或者true（检测每一项是否符合条件）的元素，<br>如果一旦发现这样的元素，every方法将会立刻返回false，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"><span class="keyword">var</span> res = arr.every(<span class="function">(<span class="params">item,index</span>) =&gt;</span> &#123;</span><br><span class="line">     <span class="keyword">return</span> item &gt; <span class="number">0</span>    </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h5 id="some方法"><a href="#some方法" class="headerlink" title="some方法"></a>some方法</h5><p>some方法为数组中每个元素执行一次callback函数，直到找到一个使callback返回一个 “true”的时候，some会立刻返回true，否则，some会返回false，<br>callback 只会在那些”有值“的索引上被调用，不会在那些被删除或从来未被赋值的索引上调用。检查数组中是否有某些项符号条件,如果有一项就返回true,</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
     
@@ -392,6 +420,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/16/sql优化方案/" rel="prev" title="sql优化方案">
+                sql优化方案 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -443,8 +475,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -461,7 +502,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -472,7 +513,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -483,7 +524,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -522,6 +563,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组遍历的方法"><span class="nav-number">1.</span> <span class="nav-text">数组遍历的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#for语句"><span class="nav-number">1.0.1.</span> <span class="nav-text">for语句</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#forEach语句"><span class="nav-number">1.0.2.</span> <span class="nav-text">forEach语句</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#for-in语句"><span class="nav-number">1.0.3.</span> <span class="nav-text">for-in语句</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#for-of语句"><span class="nav-number">1.0.4.</span> <span class="nav-text">for-of语句</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#for-of和for-in区别"><span class="nav-number">1.0.5.</span> <span class="nav-text">for-of和for-in区别</span></a></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#es6最新的循环方法，"><span class="nav-number">2.</span> <span class="nav-text">es6最新的循环方法，</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#map方法–不改变原数组"><span class="nav-number">2.0.1.</span> <span class="nav-text">map方法–不改变原数组</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#reduce方法"><span class="nav-number">2.0.2.</span> <span class="nav-text">reduce方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#filter方法–不改变原数组（过滤需要的数据）"><span class="nav-number">2.0.3.</span> <span class="nav-text">filter方法–不改变原数组（过滤需要的数据）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#every方法"><span class="nav-number">2.0.4.</span> <span class="nav-text">every方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#some方法"><span class="nav-number">2.0.5.</span> <span class="nav-text">some方法</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

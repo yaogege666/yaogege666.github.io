@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="vue,动态绑定,">
+  <meta name="keywords" content="sql - 优化,">
 
 
 
@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="Welcome to my blog， 对象方法1.最简单的绑定（这里的active加不加单引号都可以，以下也一样都能渲染） 1:class=&quot;&amp;#123; &apos;active&apos;: isActive &amp;#125;&quot;  2.判断是否绑定一个active 123:class=&quot;&amp;#123;&apos;active&apos;:isActive==-1&amp;#125;&quot;  或者:class=&quot;&amp;#123;&apos;active&apos;:isAc">
-<meta name="keywords" content="vue,动态绑定">
+<meta name="description" content="welcome to my blog, today,I will share with you some SQL optimization solutions. 优化的哲学1.优化可能带来的问题 优化不总是对一个单纯的环境进行，还很可能是一个复杂的已投产的系统； 优化手段本来就有很大的风险，只不过你没能力意识到和预见到； 任何的技术可以解决一个问题，但必然存在带来一个问题的风险； 对于优化来说解决">
+<meta name="keywords" content="sql - 优化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue动态绑定class的几种方式">
-<meta property="og:url" content="http://yoursite.com/2019/11/29/vue动态绑定class的几种方式/index.html">
+<meta property="og:title" content="sql优化方案">
+<meta property="og:url" content="http://yoursite.com/2019/12/16/sql优化方案/index.html">
 <meta property="og:site_name" content="一只可爱的小叮当">
-<meta property="og:description" content="Welcome to my blog， 对象方法1.最简单的绑定（这里的active加不加单引号都可以，以下也一样都能渲染） 1:class=&quot;&amp;#123; &apos;active&apos;: isActive &amp;#125;&quot;  2.判断是否绑定一个active 123:class=&quot;&amp;#123;&apos;active&apos;:isActive==-1&amp;#125;&quot;  或者:class=&quot;&amp;#123;&apos;active&apos;:isAc">
+<meta property="og:description" content="welcome to my blog, today,I will share with you some SQL optimization solutions. 优化的哲学1.优化可能带来的问题 优化不总是对一个单纯的环境进行，还很可能是一个复杂的已投产的系统； 优化手段本来就有很大的风险，只不过你没能力意识到和预见到； 任何的技术可以解决一个问题，但必然存在带来一个问题的风险； 对于优化来说解决">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-04T07:42:05.399Z">
+<meta property="og:image" content="http://yoursite.com/2019/12/16/sql优化方案/IO各层次性能汇总.jpeg">
+<meta property="og:updated_time" content="2019-12-16T06:25:10.212Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue动态绑定class的几种方式">
-<meta name="twitter:description" content="Welcome to my blog， 对象方法1.最简单的绑定（这里的active加不加单引号都可以，以下也一样都能渲染） 1:class=&quot;&amp;#123; &apos;active&apos;: isActive &amp;#125;&quot;  2.判断是否绑定一个active 123:class=&quot;&amp;#123;&apos;active&apos;:isActive==-1&amp;#125;&quot;  或者:class=&quot;&amp;#123;&apos;active&apos;:isAc">
+<meta name="twitter:title" content="sql优化方案">
+<meta name="twitter:description" content="welcome to my blog, today,I will share with you some SQL optimization solutions. 优化的哲学1.优化可能带来的问题 优化不总是对一个单纯的环境进行，还很可能是一个复杂的已投产的系统； 优化手段本来就有很大的风险，只不过你没能力意识到和预见到； 任何的技术可以解决一个问题，但必然存在带来一个问题的风险； 对于优化来说解决">
+<meta name="twitter:image" content="http://yoursite.com/2019/12/16/sql优化方案/IO各层次性能汇总.jpeg">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/11/29/vue动态绑定class的几种方式/">
+  <link rel="canonical" href="http://yoursite.com/2019/12/16/sql优化方案/">
 
 
 
 
 
-  <title>vue动态绑定class的几种方式 | 一只可爱的小叮当</title>
+  <title>sql优化方案 | 一只可爱的小叮当</title>
   
 
 
@@ -293,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/29/vue动态绑定class的几种方式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/16/sql优化方案/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kathy gege">
@@ -310,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">vue动态绑定class的几种方式</h1>
+          <h1 class="post-title" itemprop="name headline">sql优化方案</h1>
         
 
         <div class="post-meta">
@@ -322,8 +324,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-29T09:55:56+08:00">
-                2019-11-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-16T10:50:30+08:00">
+                2019-12-16
               </time>
             
 
@@ -345,8 +347,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/vue/" itemprop="url" rel="index">
-                    <span itemprop="name">vue</span>
+                  <a href="/categories/sql/" itemprop="url" rel="index">
+                    <span itemprop="name">sql</span>
                   </a>
                 </span>
 
@@ -382,28 +384,72 @@
       
 
       
-        <p>Welcome to my blog，</p>
-<h2 id="对象方法"><a href="#对象方法" class="headerlink" title="对象方法"></a>对象方法</h2><p>1.最简单的绑定（这里的active加不加单引号都可以，以下也一样都能渲染）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:<span class="class"><span class="keyword">class</span></span>=<span class="string">"&#123; 'active': isActive &#125;"</span></span><br></pre></td></tr></table></figure>
-
-<p>2.判断是否绑定一个active</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">:<span class="class"><span class="keyword">class</span></span>=<span class="string">"&#123;'active':isActive==-1&#125;"</span>  </span><br><span class="line">或者</span><br><span class="line">:<span class="class"><span class="keyword">class</span></span>=<span class="string">"&#123;'active':isActive==index&#125;"</span></span><br></pre></td></tr></table></figure>
-
-
-<p>3.绑定并判断多个</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第一种（用逗号隔开）</span></span><br><span class="line">:<span class="class"><span class="keyword">class</span></span>=<span class="string">"&#123; 'active': isActive, 'sort': isSort &#125;"</span></span><br><span class="line"><span class="comment">//第二种（放在data里面）</span></span><br><span class="line"><span class="comment">//也可以把后面绑定的对象写在一个变量放在data里面，可以变成下面这样</span></span><br><span class="line">:<span class="class"><span class="keyword">class</span></span>=<span class="string">"classObject"</span></span><br><span class="line">data() &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    classObject:&#123; <span class="attr">active</span>: <span class="literal">true</span>, <span class="attr">sort</span>:<span class="literal">false</span> &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//第三种（使用computed属性）</span></span><br><span class="line">:<span class="class"><span class="keyword">class</span></span>=<span class="string">"classObject"</span></span><br><span class="line">data() &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    isActive: <span class="literal">true</span>,</span><br><span class="line">    isSort: <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line">computed: &#123;</span><br><span class="line">  classObject: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      active: <span class="keyword">this</span>.isActive,</span><br><span class="line">      sort:<span class="keyword">this</span>.isSort</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+        <p>welcome to my blog, today,I will share with you some SQL optimization solutions.</p>
+<h3 id="优化的哲学"><a href="#优化的哲学" class="headerlink" title="优化的哲学"></a>优化的哲学</h3><h4 id="1-优化可能带来的问题"><a href="#1-优化可能带来的问题" class="headerlink" title="1.优化可能带来的问题"></a>1.优化可能带来的问题</h4><ul>
+<li>优化不总是对一个单纯的环境进行，还很可能是一个复杂的已投产的系统；</li>
+<li>优化手段本来就有很大的风险，只不过你没能力意识到和预见到；</li>
+<li>任何的技术可以解决一个问题，但必然存在带来一个问题的风险；</li>
+<li>对于优化来说解决问题而带来的问题，控制在可接受的范围内才是有成果；</li>
+<li>保持现状或出现更差的情况都是失败！</li>
+</ul>
+<h4 id="2-优化的需求"><a href="#2-优化的需求" class="headerlink" title="2.优化的需求"></a>2.优化的需求</h4><ul>
+<li>稳定性和业务可持续性，通常比性能更重要；</li>
+<li>优化不可避免涉及到变更，变更就有风险；</li>
+<li>优化使性能变好，维持和变差是等概率事件；</li>
+<li>切记优化，应该是各部门协同，共同参与的工作，任何单一部门都不能对数据库进行优化！</li>
+</ul>
 <a id="more"></a>
 
-<h2 id="数组方法"><a href="#数组方法" class="headerlink" title="数组方法"></a>数组方法</h2><p>1.单纯数组</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">:<span class="class"><span class="keyword">class</span></span>=<span class="string">"[isActive,isSort]"</span></span><br><span class="line">data() &#123;</span><br><span class="line">  <span class="keyword">return</span>&#123;</span><br><span class="line">    isActive:<span class="string">'active'</span>,</span><br><span class="line">    isSort:<span class="string">'sort'</span></span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<p>2.数组与三元运算符结合判断选择需要的class （注意：三元运算符后面的“：”两边的class需要加上单引号，否则不能正确渲染）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">:<span class="class"><span class="keyword">class</span></span>=<span class="string">"[isActive?'active':'']"</span></span><br><span class="line">或者</span><br><span class="line">:<span class="class"><span class="keyword">class</span></span>=<span class="string">"[isActive==1?'active':'']"</span></span><br><span class="line">或者</span><br><span class="line">:<span class="class"><span class="keyword">class</span></span>=<span class="string">"[isActive==index?'active':'']"</span></span><br><span class="line">或者</span><br><span class="line">:<span class="class"><span class="keyword">class</span></span>=<span class="string">"[isActive==index?'active':'otherActiveClass']"</span></span><br></pre></td></tr></table></figure>
-
-<p>3.数组对象结合动态判断</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">:<span class="class"><span class="keyword">class</span></span>=<span class="string">"[&#123; active: isActive &#125;, 'sort']"</span></span><br><span class="line">或者</span><br><span class="line">:<span class="class"><span class="keyword">class</span></span>=<span class="string">"[&#123; active: isActive==1 &#125;, 'sort']"</span></span><br><span class="line">或者</span><br><span class="line">:<span class="class"><span class="keyword">class</span></span>=<span class="string">"[&#123; active: isActive==index &#125;, 'sort']"</span></span><br></pre></td></tr></table></figure>
+<h3 id="优化思路"><a href="#优化思路" class="headerlink" title="优化思路"></a>优化思路</h3><h4 id="1-优化内容"><a href="#1-优化内容" class="headerlink" title="1.优化内容"></a>1.优化内容</h4><p> 在数据库优化上有两个主要方面：即安全与性能。</p>
+<ul>
+<li>安全-&gt;数据可持续性；</li>
+<li>性能-&gt;数据的高性能访问。</li>
+</ul>
+<h4 id="2-优化范围"><a href="#2-优化范围" class="headerlink" title="2.优化范围"></a>2.优化范围</h4><p> <strong>存储，主机和操作系统方面</strong></p>
+<ul>
+<li><p>主机架构稳定性</p>
+</li>
+<li><p>I/O规划及配置</p>
+</li>
+<li><p>Swap交换分区</p>
+</li>
+<li><p>OS内核参数和网络问题</p>
+<p><strong>应用程序方面</strong></p>
+<ul>
+<li>应用程序稳定性；</li>
+<li>串行访问资源；</li>
+<li>性能欠佳会话管理；</li>
+<li>这个应用适不适合用MySQL。</li>
+<li>SQL语句性能；</li>
+</ul>
+</li>
+</ul>
+<p> <strong>数据库优化方面</strong></p>
+<ul>
+<li>内存</li>
+<li>数据库结构</li>
+<li>实例配置</li>
+</ul>
+<h4 id="3-优化维度"><a href="#3-优化维度" class="headerlink" title="3.优化维度"></a>3.优化维度</h4><ul>
+<li><p>硬件   </p>
+</li>
+<li><p>系统配置</p>
+</li>
+<li><p>数据库表结构</p>
+</li>
+<li><p>SQL及索引</p>
+<p>优化选择：</p>
+</li>
+<li><p>优化成本：硬件&gt;系统配置&gt;数据库表结构&gt;SQL及索引。</p>
+</li>
+<li><p>优化效果：硬件&lt;系统配置&lt;数据库表结构&lt;SQL及索引。</p>
+<blockquote>
+<p>详细的优化方案见-document–sql优化文档</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="如何正确优化sql："><a href="#如何正确优化sql：" class="headerlink" title="如何正确优化sql："></a>如何正确优化sql：</h3><p>要正确的优化SQL，我们需要快速定位能性的瓶颈点，也就是说快速找到我们SQL主要的开销在哪里？<br>而大多数情况性能最慢的设备会是瓶颈点，如下载时网络速度可能会是瓶颈点，<br>本地复制文件时硬盘可能会是瓶颈点，为什么这些一般的工作我们能快速确认瓶颈点呢，<br>因为我们对这些慢速设备的性能数据有一些基本的认识，如网络带宽是2Mbps，硬盘是每分钟7200转等等。<br>因此，为了快速找到SQL的性能瓶颈点，我们也需要了解我们计算机系统的硬件基本性能指标，<br>下图展示的当前主流计算机性能指标数据。</p>
+<img src="/2019/12/16/sql优化方案/IO各层次性能汇总.jpeg">
 
 
       
@@ -422,9 +468,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/vue/" rel="tag"># vue</a>
-          
-            <a href="/tags/动态绑定/" rel="tag"># 动态绑定</a>
+            <a href="/tags/sql-优化/" rel="tag"># sql - 优化</a>
           
         </div>
       
@@ -437,8 +481,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/11/27/require和import/" rel="next" title="require和import">
-                <i class="fa fa-chevron-left"></i> require和import
+              <a href="/2019/12/10/js数组遍历方法对比/" rel="next" title="js数组遍历方法对比">
+                <i class="fa fa-chevron-left"></i> js数组遍历方法对比
               </a>
             
           </div>
@@ -446,10 +490,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/12/02/Vue-computed以及watch/" rel="prev" title="Vue computed以及watch">
-                Vue computed以及watch <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -599,7 +639,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#对象方法"><span class="nav-number">1.</span> <span class="nav-text">对象方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组方法"><span class="nav-number">2.</span> <span class="nav-text">数组方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#优化的哲学"><span class="nav-number">1.</span> <span class="nav-text">优化的哲学</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-优化可能带来的问题"><span class="nav-number">1.1.</span> <span class="nav-text">1.优化可能带来的问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-优化的需求"><span class="nav-number">1.2.</span> <span class="nav-text">2.优化的需求</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化思路"><span class="nav-number">2.</span> <span class="nav-text">优化思路</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-优化内容"><span class="nav-number">2.1.</span> <span class="nav-text">1.优化内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-优化范围"><span class="nav-number">2.2.</span> <span class="nav-text">2.优化范围</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-优化维度"><span class="nav-number">2.3.</span> <span class="nav-text">3.优化维度</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何正确优化sql："><span class="nav-number">3.</span> <span class="nav-text">如何正确优化sql：</span></a></li></ol></div>
             
 
           </div>

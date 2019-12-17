@@ -292,6 +292,165 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/16/sql优化方案/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kathy gege">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一只可爱的小叮当">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/16/sql优化方案/" itemprop="url">sql优化方案</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-16T10:50:30+08:00">
+                2019-12-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/sql/" itemprop="url" rel="index">
+                    <span itemprop="name">sql</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>welcome to my blog, today,I will share with you some SQL optimization solutions.</p>
+<h3 id="优化的哲学"><a href="#优化的哲学" class="headerlink" title="优化的哲学"></a>优化的哲学</h3><h4 id="1-优化可能带来的问题"><a href="#1-优化可能带来的问题" class="headerlink" title="1.优化可能带来的问题"></a>1.优化可能带来的问题</h4><ul>
+<li>优化不总是对一个单纯的环境进行，还很可能是一个复杂的已投产的系统；</li>
+<li>优化手段本来就有很大的风险，只不过你没能力意识到和预见到；</li>
+<li>任何的技术可以解决一个问题，但必然存在带来一个问题的风险；</li>
+<li>对于优化来说解决问题而带来的问题，控制在可接受的范围内才是有成果；</li>
+<li>保持现状或出现更差的情况都是失败！</li>
+</ul>
+<h4 id="2-优化的需求"><a href="#2-优化的需求" class="headerlink" title="2.优化的需求"></a>2.优化的需求</h4><ul>
+<li>稳定性和业务可持续性，通常比性能更重要；</li>
+<li>优化不可避免涉及到变更，变更就有风险；</li>
+<li>优化使性能变好，维持和变差是等概率事件；</li>
+<li>切记优化，应该是各部门协同，共同参与的工作，任何单一部门都不能对数据库进行优化！</li>
+</ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/12/16/sql优化方案/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/10/js数组遍历方法对比/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -363,7 +522,35 @@
       
         
           
-            
+            <h3 id="数组遍历的方法"><a href="#数组遍历的方法" class="headerlink" title="数组遍历的方法"></a>数组遍历的方法</h3><h5 id="for语句"><a href="#for语句" class="headerlink" title="for语句"></a>for语句</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>]</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, len = arr.length; i &lt; len; i++)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(arr[i])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这是标准的for循环的写法，字符串也支持，定义一个变量 i 作为索引，以跟踪访问的位置，len是数组的长度，i 不能超过len</p>
+<h5 id="forEach语句"><a href="#forEach语句" class="headerlink" title="forEach语句"></a>forEach语句</h5><p>forEach函数对数组的每个元素执行一次提供的callback函数，遍历一个数组，让数组每个元素做一些事情，，forEach是一个数组方法，可以用来把一个函数套用在一个数组的每个元素上，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">arr.forEach(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(item * <span class="number">2</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h5 id="for-in语句"><a href="#for-in语句" class="headerlink" title="for-in语句"></a>for-in语句</h5><p>for-in一般会用来遍历对象，不过只有可枚举的属性才可以被读取到，包括非整数类型的名称和继承的那些原型链上面的属性，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    name: <span class="string">'test'</span>,</span><br><span class="line">    color: <span class="string">'red'</span>,</span><br><span class="line">    day: <span class="string">'sunday'</span>,</span><br><span class="line">    number: <span class="number">5</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> obj) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(obj[key])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="for-of语句"><a href="#for-of语句" class="headerlink" title="for-of语句"></a>for-of语句</h5><p>for-of语句在可迭代对象上创建一个迭代循环，调用自定义迭代钩子，并为每个不同属性的值执行语句，只要是一个iterable的对象,就可以通过for-of来迭代.，<br>可迭代对象（ Array，Map，Set，String，TypedArray，arguments 对象等），</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [&#123;<span class="attr">name</span>:<span class="string">'bb'</span>&#125;,<span class="number">5</span>,<span class="string">'test'</span>]</span><br><span class="line"><span class="keyword">for</span> (item <span class="keyword">of</span> arr) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(item)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="for-of和for-in区别"><a href="#for-of和for-in区别" class="headerlink" title="for-of和for-in区别"></a>for-of和for-in区别</h5><p>for-in需要把继承链的对象属性都遍历一次，花费时间更久，<br>for-of语句只遍历可迭代的对象的数据，</p>
+<h3 id="es6最新的循环方法，"><a href="#es6最新的循环方法，" class="headerlink" title="es6最新的循环方法，"></a>es6最新的循环方法，</h3><h5 id="map方法–不改变原数组"><a href="#map方法–不改变原数组" class="headerlink" title="map方法–不改变原数组"></a>map方法–不改变原数组</h5><p>调用Array的map()方法，传入我们自己的函数，就得到了一个新的Array作为结果()<br>map方法会给原数组中的每个元素按顺序调用一次callback函数，callback每次执行后的返回值（包括undefined）组合起来形成一个新数组。<br>这样的好处就是我们可以拿到自己需要的数据组合成新的数组，而对原数组没有任何修改。<br>callback函数只会在有值的索引上被调用，那些从来没有被赋值过，或者使用delete删除的索引则不会被调用，让数组通过某种计算产生一个新数组。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">var</span> maparr = arr.map(<span class="function"><span class="params">current</span> =&gt;</span> current*<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<h5 id="reduce方法"><a href="#reduce方法" class="headerlink" title="reduce方法"></a>reduce方法</h5><p>让数组中的前项和后项做某种计算，并累计最终值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>  arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">var</span> total = arr.reduce(<span class="function">(<span class="params">count,arr</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> count + arr.money;</span><br><span class="line">&#125;,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<h5 id="filter方法–不改变原数组（过滤需要的数据）"><a href="#filter方法–不改变原数组（过滤需要的数据）" class="headerlink" title="filter方法–不改变原数组（过滤需要的数据）"></a>filter方法–不改变原数组（过滤需要的数据）</h5><p>filter为数组中的每个元素调用一次callback函数，并把所有callback返回true或等价与true的值的元素创建一个新数组，<br>就是把全部符合条件的元素过滤出来，组合成一个新数组。<br>callback 只会在已经赋值的索引上被调用，对于那些已经被删除或者从未被赋值的索引不会被调用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"><span class="keyword">var</span> filterArr = arr.filter(<span class="function">(<span class="params">num</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> num &gt; <span class="number">3</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h5 id="every方法"><a href="#every方法" class="headerlink" title="every方法"></a>every方法</h5><p>every为数组中的每个元素执行一次callback函数，直到他找到一个callback返回false（表示可转换为布尔值false）或者true（检测每一项是否符合条件）的元素，<br>如果一旦发现这样的元素，every方法将会立刻返回false，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"><span class="keyword">var</span> res = arr.every(<span class="function">(<span class="params">item,index</span>) =&gt;</span> &#123;</span><br><span class="line">     <span class="keyword">return</span> item &gt; <span class="number">0</span>    </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h5 id="some方法"><a href="#some方法" class="headerlink" title="some方法"></a>some方法</h5><p>some方法为数组中每个元素执行一次callback函数，直到找到一个使callback返回一个 “true”的时候，some会立刻返回true，否则，some会返回false，<br>callback 只会在那些”有值“的索引上被调用，不会在那些被删除或从来未被赋值的索引上调用。检查数组中是否有某些项符号条件,如果有一项就返回true,</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br></pre></td></tr></table></figure>
+
+
           
         
       
@@ -1623,166 +1810,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/24/BFC及其应用/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Kathy gege">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一只可爱的小叮当">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/09/24/BFC及其应用/" itemprop="url">BFC及其应用</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-24T15:52:06+08:00">
-                2019-09-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/面试/" itemprop="url" rel="index">
-                    <span itemprop="name">面试</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Welcome to my blog，This time I want to introduce a question about BFC。</p>
-<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><hr>
-<p>BFC 就是块级格式上下文，是页面盒模型布局中的一种 CSS 渲染模式，相当于一个独立的容器，里面的元素和外部的元素相互不影响。<br>只要元素满足下面任一条件即可触发 BFC 特性：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.body 根元素</span><br><span class="line">2.浮动元素：float 除 none 以外的值</span><br><span class="line">3.绝对定位元素：position (absolute、fixed)</span><br><span class="line">4.display 为 inline-block、table-cells、flex</span><br><span class="line">5.overflow 除了 visible 以外的值 (hidden、auto、scroll)</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/09/24/BFC及其应用/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1835,7 +1862,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1846,7 +1873,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1857,7 +1884,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
