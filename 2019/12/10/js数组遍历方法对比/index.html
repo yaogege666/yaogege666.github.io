@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="数组遍历的方法for语句1234var arr = [1,2,4,6]for(var i = 0, len = arr.length; i &amp;lt; len; i++)&amp;#123;    console.log(arr[i])&amp;#125;  这是标准的for循环的写法，字符串也支持，定义一个变量 i 作为索引，以跟踪访问的位置，len是数组的长度，i 不能超过len forEach语句forEac">
+<meta name="description" content="数组遍历的方法for语句1234var arr = [1,2,4,6]for(var i = 0, len = arr.length; i &amp;lt; len; i++)&amp;#123;    console.log(arr[i])&amp;#125;  这是标准的for循环的写法，字符串也支持，定义一个变量 i 作为索引，以跟踪访问的位置，len是数组的长度，i 不能超过len">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js数组遍历方法对比">
 <meta property="og:url" content="http://yoursite.com/2019/12/10/js数组遍历方法对比/index.html">
 <meta property="og:site_name" content="一只可爱的小叮当">
-<meta property="og:description" content="数组遍历的方法for语句1234var arr = [1,2,4,6]for(var i = 0, len = arr.length; i &amp;lt; len; i++)&amp;#123;    console.log(arr[i])&amp;#125;  这是标准的for循环的写法，字符串也支持，定义一个变量 i 作为索引，以跟踪访问的位置，len是数组的长度，i 不能超过len forEach语句forEac">
+<meta property="og:description" content="数组遍历的方法for语句1234var arr = [1,2,4,6]for(var i = 0, len = arr.length; i &amp;lt; len; i++)&amp;#123;    console.log(arr[i])&amp;#125;  这是标准的for循环的写法，字符串也支持，定义一个变量 i 作为索引，以跟踪访问的位置，len是数组的长度，i 不能超过len">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-12T11:59:19.058Z">
+<meta property="og:updated_time" content="2019-12-16T06:26:25.797Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js数组遍历方法对比">
-<meta name="twitter:description" content="数组遍历的方法for语句1234var arr = [1,2,4,6]for(var i = 0, len = arr.length; i &amp;lt; len; i++)&amp;#123;    console.log(arr[i])&amp;#125;  这是标准的for循环的写法，字符串也支持，定义一个变量 i 作为索引，以跟踪访问的位置，len是数组的长度，i 不能超过len forEach语句forEac">
+<meta name="twitter:description" content="数组遍历的方法for语句1234var arr = [1,2,4,6]for(var i = 0, len = arr.length; i &amp;lt; len; i++)&amp;#123;    console.log(arr[i])&amp;#125;  这是标准的for循环的写法，字符串也支持，定义一个变量 i 作为索引，以跟踪访问的位置，len是数组的长度，i 不能超过len">
 
 
 
@@ -362,6 +362,8 @@
         <h3 id="数组遍历的方法"><a href="#数组遍历的方法" class="headerlink" title="数组遍历的方法"></a>数组遍历的方法</h3><h5 id="for语句"><a href="#for语句" class="headerlink" title="for语句"></a>for语句</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>]</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, len = arr.length; i &lt; len; i++)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(arr[i])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>这是标准的for循环的写法，字符串也支持，定义一个变量 i 作为索引，以跟踪访问的位置，len是数组的长度，i 不能超过len</p>
+<a id="more"></a>
+
 <h5 id="forEach语句"><a href="#forEach语句" class="headerlink" title="forEach语句"></a>forEach语句</h5><p>forEach函数对数组的每个元素执行一次提供的callback函数，遍历一个数组，让数组每个元素做一些事情，，forEach是一个数组方法，可以用来把一个函数套用在一个数组的每个元素上，</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">arr.forEach(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(item * <span class="number">2</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
@@ -502,7 +504,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -513,7 +515,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -524,7 +526,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
