@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/mylogo.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/mylogo.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/mylogo.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/mylogo.png?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="数组遍历的方法for语句1234var arr = [1,2,4,6]for(var i = 0, len = arr.length; i &amp;lt; len; i++)&amp;#123;    console.log(arr[i])&amp;#125;  这是标准的for循环的写法，字符串也支持，定义一个变量 i 作为索引，以跟踪访问的位置，len是数组的长度，i 不能超过len">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js数组遍历方法对比">
+<meta property="og:url" content="http://yoursite.com/2019/12/10/js数组遍历方法对比/index.html">
+<meta property="og:site_name" content="一只可爱的小叮当">
+<meta property="og:description" content="数组遍历的方法for语句1234var arr = [1,2,4,6]for(var i = 0, len = arr.length; i &amp;lt; len; i++)&amp;#123;    console.log(arr[i])&amp;#125;  这是标准的for循环的写法，字符串也支持，定义一个变量 i 作为索引，以跟踪访问的位置，len是数组的长度，i 不能超过len">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-03-13T03:32:25.794Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js数组遍历方法对比">
+<meta name="twitter:description" content="数组遍历的方法for语句1234var arr = [1,2,4,6]for(var i = 0, len = arr.length; i &amp;lt; len; i++)&amp;#123;    console.log(arr[i])&amp;#125;  这是标准的for循环的写法，字符串也支持，定义一个变量 i 作为索引，以跟踪访问的位置，len是数组的长度，i 不能超过len">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/12/10/js数组遍历方法对比/">
+
+
+
+
+
+  <title>js数组遍历方法对比 | 一只可爱的小叮当</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">一只可爱的小叮当</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">魔都某位可爱温柔美丽的女娃</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/10/js数组遍历方法对比/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kathy gege">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一只可爱的小叮当">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">js数组遍历方法对比</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-10T11:20:53+08:00">
+                2019-12-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="数组遍历的方法"><a href="#数组遍历的方法" class="headerlink" title="数组遍历的方法"></a>数组遍历的方法</h3><h5 id="for语句"><a href="#for语句" class="headerlink" title="for语句"></a>for语句</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>]</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, len = arr.length; i &lt; len; i++)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(arr[i])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这是标准的for循环的写法，字符串也支持，定义一个变量 i 作为索引，以跟踪访问的位置，len是数组的长度，i 不能超过len</p>
+<a id="more"></a>
+
+<h5 id="forEach语句"><a href="#forEach语句" class="headerlink" title="forEach语句"></a>forEach语句</h5><p>forEach函数对数组的每个元素执行一次提供的callback函数，遍历一个数组，让数组每个元素做一些事情，，forEach是一个数组方法，可以用来把一个函数套用在一个数组的每个元素上，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">arr.forEach(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(item * <span class="number">2</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h5 id="for-in语句"><a href="#for-in语句" class="headerlink" title="for-in语句"></a>for-in语句</h5><p>for-in一般会用来遍历对象，不过只有可枚举的属性才可以被读取到，包括非整数类型的名称和继承的那些原型链上面的属性，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    name: <span class="string">'test'</span>,</span><br><span class="line">    color: <span class="string">'red'</span>,</span><br><span class="line">    day: <span class="string">'sunday'</span>,</span><br><span class="line">    number: <span class="number">5</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> obj) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(obj[key])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="for-of语句"><a href="#for-of语句" class="headerlink" title="for-of语句"></a>for-of语句</h5><p>for-of语句在可迭代对象上创建一个迭代循环，调用自定义迭代钩子，并为每个不同属性的值执行语句，只要是一个iterable的对象,就可以通过for-of来迭代.，<br>可迭代对象（ Array，Map，Set，String，TypedArray，arguments 对象等），</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [&#123;<span class="attr">name</span>:<span class="string">'bb'</span>&#125;,<span class="number">5</span>,<span class="string">'test'</span>]</span><br><span class="line"><span class="keyword">for</span> (item <span class="keyword">of</span> arr) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(item)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="for-of和for-in区别"><a href="#for-of和for-in区别" class="headerlink" title="for-of和for-in区别"></a>for-of和for-in区别</h5><p>for-in需要把继承链的对象属性都遍历一次，花费时间更久，<br>for-of语句只遍历可迭代的对象的数据，</p>
+<h3 id="es6最新的循环方法，"><a href="#es6最新的循环方法，" class="headerlink" title="es6最新的循环方法，"></a>es6最新的循环方法，</h3><h5 id="map方法–不改变原数组"><a href="#map方法–不改变原数组" class="headerlink" title="map方法–不改变原数组"></a>map方法–不改变原数组</h5><p>调用Array的map()方法，传入我们自己的函数，就得到了一个新的Array作为结果()<br>map方法会给原数组中的每个元素按顺序调用一次callback函数，callback每次执行后的返回值（包括undefined）组合起来形成一个新数组。<br>这样的好处就是我们可以拿到自己需要的数据组合成新的数组，而对原数组没有任何修改。<br>callback函数只会在有值的索引上被调用，那些从来没有被赋值过，或者使用delete删除的索引则不会被调用，让数组通过某种计算产生一个新数组。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">var</span> maparr = arr.map(<span class="function"><span class="params">current</span> =&gt;</span> current*<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<h5 id="reduce方法"><a href="#reduce方法" class="headerlink" title="reduce方法"></a>reduce方法</h5><p>让数组中的前项和后项做某种计算，并累计最终值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>  arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">var</span> total = arr.reduce(<span class="function">(<span class="params">count,arr</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> count + arr.money;</span><br><span class="line">&#125;,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<h5 id="filter方法–不改变原数组（过滤需要的数据）"><a href="#filter方法–不改变原数组（过滤需要的数据）" class="headerlink" title="filter方法–不改变原数组（过滤需要的数据）"></a>filter方法–不改变原数组（过滤需要的数据）</h5><p>filter为数组中的每个元素调用一次callback函数，并把所有callback返回true或等价与true的值的元素创建一个新数组，<br>就是把全部符合条件的元素过滤出来，组合成一个新数组。<br>callback 只会在已经赋值的索引上被调用，对于那些已经被删除或者从未被赋值的索引不会被调用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"><span class="keyword">var</span> filterArr = arr.filter(<span class="function">(<span class="params">num</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> num &gt; <span class="number">3</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h5 id="every方法"><a href="#every方法" class="headerlink" title="every方法"></a>every方法</h5><p>every为数组中的每个元素执行一次callback函数，直到他找到一个callback返回false（表示可转换为布尔值false）或者true（检测每一项是否符合条件）的元素，<br>如果一旦发现这样的元素，every方法将会立刻返回false，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"><span class="keyword">var</span> res = arr.every(<span class="function">(<span class="params">item,index</span>) =&gt;</span> &#123;</span><br><span class="line">     <span class="keyword">return</span> item &gt; <span class="number">0</span>    </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h5 id="some方法"><a href="#some方法" class="headerlink" title="some方法"></a>some方法</h5><p>some方法为数组中每个元素执行一次callback函数，直到找到一个使callback返回一个 “true”的时候，some会立刻返回true，否则，some会返回false，<br>callback 只会在那些”有值“的索引上被调用，不会在那些被删除或从来未被赋值的索引上调用。检查数组中是否有某些项符号条件,如果有一项就返回true,</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/05/深入理解vue中的slot和slot-scope/" rel="next" title="深入理解vue中的slot和slot-scope">
+                <i class="fa fa-chevron-left"></i> 深入理解vue中的slot和slot-scope
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/16/sql优化方案/" rel="prev" title="sql优化方案">
+                sql优化方案 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Kathy gege">
+            
+              <p class="site-author-name" itemprop="name">Kathy gege</p>
+              <p class="site-description motion-element" itemprop="description">一只专注于前端的娃儿</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yaogege666" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="3162987998@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组遍历的方法"><span class="nav-number">1.</span> <span class="nav-text">数组遍历的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#for语句"><span class="nav-number">1.0.1.</span> <span class="nav-text">for语句</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#forEach语句"><span class="nav-number">1.0.2.</span> <span class="nav-text">forEach语句</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#for-in语句"><span class="nav-number">1.0.3.</span> <span class="nav-text">for-in语句</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#for-of语句"><span class="nav-number">1.0.4.</span> <span class="nav-text">for-of语句</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#for-of和for-in区别"><span class="nav-number">1.0.5.</span> <span class="nav-text">for-of和for-in区别</span></a></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#es6最新的循环方法，"><span class="nav-number">2.</span> <span class="nav-text">es6最新的循环方法，</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#map方法–不改变原数组"><span class="nav-number">2.0.1.</span> <span class="nav-text">map方法–不改变原数组</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#reduce方法"><span class="nav-number">2.0.2.</span> <span class="nav-text">reduce方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#filter方法–不改变原数组（过滤需要的数据）"><span class="nav-number">2.0.3.</span> <span class="nav-text">filter方法–不改变原数组（过滤需要的数据）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#every方法"><span class="nav-number">2.0.4.</span> <span class="nav-text">every方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#some方法"><span class="nav-number">2.0.5.</span> <span class="nav-text">some方法</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kathy gege</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+<!-- 新增访客统计代码 -->
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="true"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
